@@ -42,15 +42,3 @@ for i in range (0, len(contents)):
 
 print(validPasswords)
 
-"""
-for i in range (0, len(contents)):
-    for j in range(i+1, len(contents)):
-        sum = int(contents[i]) + int(contents[j])
-        print(contents[i], "+", contents[j], "=", sum)
-        if sum == 2020:
-            x = contents[i]
-            y = contents[j]
-            product = int(contents[i]) * int(contents[j])
-            break
-print("x =", x, "y =", y, "Product", product)
-"""
