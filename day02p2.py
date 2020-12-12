@@ -11,7 +11,6 @@
 with open('input/day02') as fh:
     contents = fh.read().splitlines()
 
-
 def validatePassword(min, maximum, char, password):
     print(min, maximum,char, password)
     if (password[min-1] == char or password[maximum-1] == char) and not(password[min-1] == char and password[maximum-1] == char):
@@ -21,7 +20,7 @@ def validatePassword(min, maximum, char, password):
         print(False)
         return False
 
-validPasswords = 0 
+validPasswords = 0
 
 for i in range (0, len(contents)):
     #extract first (min) value from string array
@@ -41,4 +40,3 @@ for i in range (0, len(contents)):
     #print("Min", min, "Max", maximum, "Char", char, "Password", password)
 
 print(validPasswords)
-
