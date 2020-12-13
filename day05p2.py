@@ -66,16 +66,25 @@ index = 0
 start = 0
 stop = 127
 highest_seat_ID = 0
+seats = set()
+possible_seats = set()
 #print("Row:", find_row(contents[0], index, start, stop))
 #print("Seat:", find_seat(contents[0], 7, 0, 7))
 
+#loop through data and calculat row/seat and ID storing the highest seat_ID
 for i in range(0, len(contents)):
     #print(i)
     seat_ID = (find_row(contents[i], index, start, stop)*8) + find_seat(contents[i], 7, 0, 7)
+    seats.add(seat_ID)
     #print("Seat ID:", seat_ID)
     if  seat_ID > highest_seat_ID:
         highest_seat_ID = seat_ID
     else:
         continue
 
-print("Highest Seat ID:", highest_seat_ID)
+for i in range(0, 127):
+    for j in range(0, 7):
+        possible_seats.add(i*8+j)
+
+# you'll have to find your seat in the set difference of all possible seats - the seats in your data set
+print("Look for your seat in the middle of the following list:\n", possible_seats - seats)
